@@ -57,4 +57,27 @@ public record SStructuredError<C>(
     Objects.requireNonNull(remediatingAction, "remediatingAction");
     Objects.requireNonNull(exception, "exception");
   }
+
+  /**
+   * An error value with only the given error code and message.
+   *
+   * @param errorCode The error code
+   * @param message   The error message
+   * @param <C>       The type of error codes
+   *
+   * @return An error value
+   */
+
+  public static <C> SStructuredError<C> withMessageOnly(
+    final C errorCode,
+    final String message)
+  {
+    return new SStructuredError<>(
+      errorCode,
+      message,
+      Map.of(),
+      Optional.empty(),
+      Optional.empty()
+    );
+  }
 }
