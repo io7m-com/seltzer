@@ -15,7 +15,8 @@
   </p>
 
   <p>
-    The <tt>seltzer</tt> package provides a set of interface types for structured error logging.
+    The <tt>seltzer</tt> package provides a set of interface types for structured human-facing error
+    logging.
   </p>
 
 </div>

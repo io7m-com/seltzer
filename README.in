@@ -31,6 +31,9 @@ simple, structured API types so that [io7m](https://www.io7m.com/) packages
 do not have to endlessly specify these kinds of structured error types over
 and over.
 
+Note: This is _not_ a machine-readable structured error logging API. For that,
+use [OpenTelemetry](https://opentelemetry.io/).
+
 ### Building
 
 ```
