@@ -24,7 +24,7 @@ If a command-line application wants to include useful values along with the
 error message such as the names of missing files, request IDs, and so on, the
 only option it really has is to encode this information directly into the
 error message. A GUI application, on the other hand, could display a basic
-error message along with a graphic table of useful values. Library code wanting
+error message along with a graphical table of useful values. Library code wanting
 to support both use-cases will typically bake some kind of structured error
 type into the API. The `seltzer` package is an attempt to provide a set of
 simple, structured API types so that [io7m](https://www.io7m.com/) packages
