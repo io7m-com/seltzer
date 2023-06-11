@@ -13,7 +13,7 @@
 
   <groupId>com.io7m.seltzer</groupId>
   <artifactId>com.io7m.seltzer</artifactId>
-  <version>1.0.0-beta0001</version>
+  <version>1.0.0</version>
 
   <packaging>pom</packaging>
   <name>com.io7m.seltzer</name>
@@ -27,7 +27,7 @@
 
   <properties>
     <com.io7m.xstructural.version>1.8.0</com.io7m.xstructural.version>
-    <io7m.api.previousVersion>1.0.0-beta0001</io7m.api.previousVersion>
+    <io7m.api.previousVersion>1.0.0-SNAPSHOT</io7m.api.previousVersion>
     <junit.version>5.9.3</junit.version>
     <jqwik.version>1.7.3</jqwik.version>
   </properties>
@@ -96,16 +96,7 @@
         <artifactId>logback-classic</artifactId>
         <version>1.4.7</version>
       </dependency>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>${junit.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-engine</artifactId>
-        <version>${junit.version}</version>
-      </dependency>
+
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.annotation.bundle</artifactId>
@@ -127,6 +118,23 @@
         <version>1.0.0-beta0001</version>
       </dependency>
       <dependency>
+        <groupId>com.io7m.jdeferthrow</groupId>
+        <artifactId>com.io7m.jdeferthrow.core</artifactId>
+        <version>1.2.0</version>
+      </dependency>
+
+      <!-- Test suite. -->
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>${junit.version}</version>
+      </dependency>
+      <dependency>
         <groupId>net.jqwik</groupId>
         <artifactId>jqwik-api</artifactId>
         <version>${jqwik.version}</version>
@@ -135,11 +143,6 @@
         <groupId>net.jqwik</groupId>
         <artifactId>jqwik-engine</artifactId>
         <version>${jqwik.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.io7m.jdeferthrow</groupId>
-        <artifactId>com.io7m.jdeferthrow.core</artifactId>
-        <version>1.2.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
