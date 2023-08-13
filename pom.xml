@@ -28,8 +28,8 @@
   <properties>
     <com.io7m.xstructural.version>1.8.0</com.io7m.xstructural.version>
     <io7m.api.previousVersion>1.0.0</io7m.api.previousVersion>
-    <junit.version>5.9.3</junit.version>
-    <jqwik.version>1.7.3</jqwik.version>
+    <junit.version>5.10.0</junit.version>
+    <jqwik.version>1.7.4</jqwik.version>
   </properties>
 
   <licenses>
@@ -94,7 +94,7 @@
       <dependency>
         <groupId>ch.qos.logback</groupId>
         <artifactId>logback-classic</artifactId>
-        <version>1.4.7</version>
+        <version>1.4.11</version>
       </dependency>
 
       <dependency>
@@ -115,7 +115,7 @@
       <dependency>
         <groupId>com.io7m.lanark</groupId>
         <artifactId>com.io7m.lanark.core</artifactId>
-        <version>1.0.0-beta0001</version>
+        <version>1.1.0</version>
       </dependency>
       <dependency>
         <groupId>com.io7m.jdeferthrow</groupId>
