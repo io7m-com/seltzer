@@ -16,11 +16,13 @@
   <packaging>jar</packaging>
   <name>com.io7m.seltzer.tests</name>
   <description>Structured Error Logging Specification (Tests)</description>
-  <url>https://www.github.com/io7m/seltzer</url>
+  <url>https://www.github.com/io7m-com/seltzer</url>
 
   <properties>
-    <mdep.analyze.skip>true</mdep.analyze.skip>
+    <bnd.baseline.skip>true</bnd.baseline.skip>
     <checkstyle.skip>true</checkstyle.skip>
+    <mdep.analyze.skip>true</mdep.analyze.skip>
+    <spotbugs.skip>true</spotbugs.skip>
   </properties>
 
   <dependencies>
