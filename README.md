@@ -4,7 +4,7 @@ seltzer
 [![Maven Central](https://img.shields.io/maven-central/v/com.io7m.seltzer/com.io7m.seltzer.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.io7m.seltzer%22)
 [![Maven Central (snapshot)](https://img.shields.io/nexus/s/com.io7m.seltzer/com.io7m.seltzer?server=https%3A%2F%2Fs01.oss.sonatype.org&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/com/io7m/seltzer/)
 [![Codecov](https://img.shields.io/codecov/c/github/io7m-com/seltzer.svg?style=flat-square)](https://codecov.io/gh/io7m-com/seltzer)
-![Java Version](https://img.shields.io/badge/21-java?label=java&color=e6c35c)
+![Java Version](https://img.shields.io/badge/17-java?label=java&color=e65cc3)
 
 ![com.io7m.seltzer](./src/site/resources/seltzer.jpg?raw=true)
 
@@ -23,7 +23,7 @@ A specification for structured, user-facing error message values.
 
   * Simple interfaces for exposing error information in a structured manner.
   * Convenient builders for structured error values.
-  * Written in pure Java 21.
+  * Written in pure Java 17.
   * [OSGi](https://www.osgi.org/) ready.
   * [JPMS](https://en.wikipedia.org/wiki/Java_Platform_Module_System) ready.
   * ISC license.

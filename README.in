@@ -7,7 +7,7 @@ A specification for structured, user-facing error message values.
 
   * Simple interfaces for exposing error information in a structured manner.
   * Convenient builders for structured error values.
-  * Written in pure Java 21.
+  * Written in pure Java 17.
   * [OSGi](https://www.osgi.org/) ready.
   * [JPMS](https://en.wikipedia.org/wiki/Java_Platform_Module_System) ready.
   * ISC license.
