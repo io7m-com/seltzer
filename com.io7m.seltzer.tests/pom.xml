@@ -16,7 +16,7 @@
   <packaging>jar</packaging>
   <name>com.io7m.seltzer.tests</name>
   <description>Structured Error Logging Specification (Tests)</description>
-  <url>https://www.github.com/io7m-com/seltzer</url>
+  <url>https://www.io7m.com/software/seltzer</url>
 
   <properties>
     <bnd.baseline.skip>true</bnd.baseline.skip>

@@ -16,7 +16,7 @@
   <packaging>jar</packaging>
   <name>com.io7m.seltzer.api</name>
   <description>Structured Error Logging Specification (API)</description>
-  <url>https://www.github.com/io7m-com/seltzer</url>
+  <url>https://www.io7m.com/software/seltzer</url>
 
   <dependencies>
     <dependency>
