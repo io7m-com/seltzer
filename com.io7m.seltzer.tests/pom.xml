@@ -9,17 +9,20 @@
   <parent>
     <artifactId>com.io7m.seltzer</artifactId>
     <groupId>com.io7m.seltzer</groupId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
   </parent>
   <artifactId>com.io7m.seltzer.tests</artifactId>
 
   <packaging>jar</packaging>
   <name>com.io7m.seltzer.tests</name>
   <description>Structured Error Logging Specification (Tests)</description>
-  <url>https://www.github.com/io7m/seltzer</url>
+  <url>https://www.io7m.com/software/seltzer</url>
 
   <properties>
+    <bnd.baseline.skip>true</bnd.baseline.skip>
+    <checkstyle.skip>true</checkstyle.skip>
     <mdep.analyze.skip>true</mdep.analyze.skip>
+    <spotbugs.skip>true</spotbugs.skip>
   </properties>
 
   <dependencies>
@@ -57,5 +60,15 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Determine test coverage -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

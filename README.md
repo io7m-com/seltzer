@@ -2,17 +2,18 @@ seltzer
 ===
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.io7m.seltzer/com.io7m.seltzer.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.io7m.seltzer%22)
-[![Maven Central (snapshot)](https://img.shields.io/nexus/s/https/s01.oss.sonatype.org/com.io7m.seltzer/com.io7m.seltzer.svg?style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/com/io7m/seltzer/)
-[![Codecov](https://img.shields.io/codecov/c/github/io7m/seltzer.svg?style=flat-square)](https://codecov.io/gh/io7m/seltzer)
+[![Maven Central (snapshot)](https://img.shields.io/nexus/s/com.io7m.seltzer/com.io7m.seltzer?server=https%3A%2F%2Fs01.oss.sonatype.org&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/com/io7m/seltzer/)
+[![Codecov](https://img.shields.io/codecov/c/github/io7m-com/seltzer.svg?style=flat-square)](https://codecov.io/gh/io7m-com/seltzer)
+![Java Version](https://img.shields.io/badge/17-java?label=java&color=e65cc3)
 
-![seltzer](./src/site/resources/seltzer.jpg?raw=true)
+![com.io7m.seltzer](./src/site/resources/seltzer.jpg?raw=true)
 
 | JVM | Platform | Status |
 |-----|----------|--------|
-| OpenJDK (Temurin) Current | Linux | [![Build (OpenJDK (Temurin) Current, Linux)](https://img.shields.io/github/actions/workflow/status/io7m/seltzer/main.linux.temurin.current.yml)](https://github.com/io7m/seltzer/actions?query=workflow%3Amain.linux.temurin.current)|
-| OpenJDK (Temurin) LTS | Linux | [![Build (OpenJDK (Temurin) LTS, Linux)](https://img.shields.io/github/actions/workflow/status/io7m/seltzer/main.linux.temurin.lts.yml)](https://github.com/io7m/seltzer/actions?query=workflow%3Amain.linux.temurin.lts)|
-| OpenJDK (Temurin) Current | Windows | [![Build (OpenJDK (Temurin) Current, Windows)](https://img.shields.io/github/actions/workflow/status/io7m/seltzer/main.windows.temurin.current.yml)](https://github.com/io7m/seltzer/actions?query=workflow%3Amain.windows.temurin.current)|
-| OpenJDK (Temurin) LTS | Windows | [![Build (OpenJDK (Temurin) LTS, Windows)](https://img.shields.io/github/actions/workflow/status/io7m/seltzer/main.windows.temurin.lts.yml)](https://github.com/io7m/seltzer/actions?query=workflow%3Amain.windows.temurin.lts)|
+| OpenJDK (Temurin) Current | Linux | [![Build (OpenJDK (Temurin) Current, Linux)](https://img.shields.io/github/actions/workflow/status/io7m-com/seltzer/main.linux.temurin.current.yml)](https://www.github.com/io7m-com/seltzer/actions?query=workflow%3Amain.linux.temurin.current)|
+| OpenJDK (Temurin) LTS | Linux | [![Build (OpenJDK (Temurin) LTS, Linux)](https://img.shields.io/github/actions/workflow/status/io7m-com/seltzer/main.linux.temurin.lts.yml)](https://www.github.com/io7m-com/seltzer/actions?query=workflow%3Amain.linux.temurin.lts)|
+| OpenJDK (Temurin) Current | Windows | [![Build (OpenJDK (Temurin) Current, Windows)](https://img.shields.io/github/actions/workflow/status/io7m-com/seltzer/main.windows.temurin.current.yml)](https://www.github.com/io7m-com/seltzer/actions?query=workflow%3Amain.windows.temurin.current)|
+| OpenJDK (Temurin) LTS | Windows | [![Build (OpenJDK (Temurin) LTS, Windows)](https://img.shields.io/github/actions/workflow/status/io7m-com/seltzer/main.windows.temurin.lts.yml)](https://www.github.com/io7m-com/seltzer/actions?query=workflow%3Amain.windows.temurin.lts)|
 
 ## seltzer
 
@@ -39,7 +40,7 @@ If a command-line application wants to include useful values along with the
 error message such as the names of missing files, request IDs, and so on, the
 only option it really has is to encode this information directly into the
 error message. A GUI application, on the other hand, could display a basic
-error message along with a graphic table of useful values. Library code wanting
+error message along with a graphical table of useful values. Library code wanting
 to support both use-cases will typically bake some kind of structured error
 type into the API. The `seltzer` package is an attempt to provide a set of
 simple, structured API types so that [io7m](https://www.io7m.com/) packages
