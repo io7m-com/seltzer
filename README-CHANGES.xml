@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <c:changelog project="com.io7m.seltzer" xmlns:c="urn:com.io7m.changelog:4.0">
   <c:releases>
-    <c:release date="2023-06-11T09:30:41+00:00" is-open="true" ticket-system="com.github.io7m.seltzer" version="1.0.0">
+    <c:release date="2024-05-08T00:00:00+00:00" is-open="false" ticket-system="com.github.io7m.seltzer" version="1.0.0">
       <c:changes>
-        <c:change date="2023-06-11T09:30:41+00:00" summary="Initial major release."/>
+        <c:change date="2023-06-11T00:00:00+00:00" summary="Initial major release."/>
       </c:changes>
+    </c:release>
+    <c:release date="2024-05-08T19:25:14+00:00" is-open="true" ticket-system="com.github.io7m.seltzer" version="1.0.1">
+      <c:changes/>
     </c:release>
   </c:releases>
   <c:ticket-systems>
