@@ -28,7 +28,7 @@ import java.util.Optional;
  * A convenient extension of the standard {@link IOException} class.
  */
 
-public final class SIOException
+public class SIOException
   extends IOException
   implements SStructuredErrorExceptionType<String>
 {
@@ -207,25 +207,25 @@ public final class SIOException
   }
 
   @Override
-  public String errorCode()
+  public final String errorCode()
   {
     return this.errorCode;
   }
 
   @Override
-  public Map<String, String> attributes()
+  public final Map<String, String> attributes()
   {
     return this.attributes;
   }
 
   @Override
-  public Optional<String> remediatingAction()
+  public final Optional<String> remediatingAction()
   {
     return this.remediatingAction;
   }
 
   @Override
-  public Optional<Throwable> exception()
+  public final Optional<Throwable> exception()
   {
     return Optional.of(this);
   }
