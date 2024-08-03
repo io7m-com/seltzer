@@ -17,7 +17,6 @@
 
 package com.io7m.seltzer.tests;
 
-import com.io7m.seltzer.api.SStructuredErrorExceptionType;
 import com.io7m.seltzer.io.SIOException;
 import net.jqwik.api.Arbitraries;
 import net.jqwik.api.Arbitrary;
@@ -42,53 +41,6 @@ public final class SIOExceptionTest
   {
     return Arbitraries.strings()
       .map(IOException::new);
-  }
-
-  final class Ex extends Exception
-    implements SStructuredErrorExceptionType<String>
-  {
-    private final String errorCode;
-    private final Map<String, String> attributes;
-    private final Optional<String> remediatingAction;
-    private final Optional<Throwable> exception;
-
-    Ex(
-      final String errorCode,
-      final String message,
-      final Map<String, String> attributes,
-      final Optional<String> remediatingAction,
-      final Optional<Throwable> exception)
-    {
-      super(message);
-      this.errorCode = errorCode;
-      this.attributes = attributes;
-      this.remediatingAction = remediatingAction;
-      this.exception = exception;
-    }
-
-    @Override
-    public String errorCode()
-    {
-      return this.errorCode;
-    }
-
-    @Override
-    public Map<String, String> attributes()
-    {
-      return this.attributes;
-    }
-
-    @Override
-    public Optional<String> remediatingAction()
-    {
-      return this.remediatingAction;
-    }
-
-    @Override
-    public Optional<Throwable> exception()
-    {
-      return this.exception;
-    }
   }
 
   /**
