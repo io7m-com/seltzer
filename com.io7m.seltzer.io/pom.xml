@@ -11,14 +11,20 @@
     <groupId>com.io7m.seltzer</groupId>
     <version>1.1.0</version>
   </parent>
-  <artifactId>com.io7m.seltzer.api</artifactId>
+  <artifactId>com.io7m.seltzer.io</artifactId>
 
   <packaging>jar</packaging>
-  <name>com.io7m.seltzer.api</name>
-  <description>Structured Error Logging Specification (API)</description>
+  <name>com.io7m.seltzer.io</name>
+  <description>Structured Error Logging Specification (I/O extensions)</description>
   <url>https://www.io7m.com/software/seltzer</url>
 
   <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>com.io7m.seltzer.api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.annotation.bundle</artifactId>
