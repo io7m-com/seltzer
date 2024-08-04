@@ -281,4 +281,31 @@ public final class SIOExceptionTest
     assertEquals(sioException, sioException.exception().orElseThrow());
     assertEquals(action, sioException.remediatingAction().orElseThrow());
   }
+
+  /**
+   * Exception fields work.
+   *
+   * @param message     The message
+   * @param errorCode   The error code
+   * @param attributes1 A set of attributes
+   */
+
+  @Property
+  public void testException7(
+    final @ForAll String message,
+    final @ForAll String errorCode,
+    final @ForAll Map<String, String> attributes1)
+  {
+    final var sioException =
+      new SIOException(
+        message,
+        errorCode,
+        attributes1
+      );
+
+    assertEquals(message, sioException.message());
+    assertEquals(errorCode, sioException.errorCode());
+    assertEquals(attributes1, sioException.attributes());
+    assertEquals(sioException, sioException.exception().orElseThrow());
+  }
 }

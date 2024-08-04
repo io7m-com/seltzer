@@ -47,73 +47,15 @@ public final class SStructuredErrorTest
       .map(IOException::new);
   }
 
-  record OtherError<C>(
-    C errorCode,
-    String message,
-    Map<String, String> attributes,
-    Optional<String> remediatingAction,
-    Optional<Throwable> exception)
-    implements SStructuredErrorType<C>
-  {
-
-  }
-
-  final class Ex extends Exception
-    implements SStructuredErrorExceptionType<String>
-  {
-    private final String errorCode;
-    private final Map<String, String> attributes;
-    private final Optional<String> remediatingAction;
-    private final Optional<Throwable> exception;
-
-    Ex(
-      final String errorCode,
-      final String message,
-      final Map<String, String> attributes,
-      final Optional<String> remediatingAction,
-      final Optional<Throwable> exception)
-    {
-      super(message);
-      this.errorCode = errorCode;
-      this.attributes = attributes;
-      this.remediatingAction = remediatingAction;
-      this.exception = exception;
-    }
-
-    @Override
-    public String errorCode()
-    {
-      return this.errorCode;
-    }
-
-    @Override
-    public Map<String, String> attributes()
-    {
-      return this.attributes;
-    }
-
-    @Override
-    public Optional<String> remediatingAction()
-    {
-      return this.remediatingAction;
-    }
-
-    @Override
-    public Optional<Throwable> exception()
-    {
-      return this.exception;
-    }
-  }
-
   /**
    * Mutable builders work as expected.
    *
-   * @param errorCode  The error code
-   * @param message1   A message
-   * @param message2   A message
-   * @param action     An action
+   * @param errorCode   The error code
+   * @param message1    A message
+   * @param message2    A message
+   * @param action      An action
    * @param attributes1 A set of attributes
-   * @param exception  An exception
+   * @param exception   An exception
    */
 
   @Property
@@ -140,9 +82,12 @@ public final class SStructuredErrorTest
 
     final var all =
       Stream.concat(
-        attributes1.entrySet().stream(),
-        attributes2.entrySet().stream())
-        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (s0, s1) -> s1));
+          attributes1.entrySet().stream(),
+          attributes2.entrySet().stream())
+        .collect(Collectors.toMap(
+          Map.Entry::getKey,
+          Map.Entry::getValue,
+          (s0, s1) -> s1));
 
     final var error = builder.build();
     assertEquals(message2, error.message());
@@ -250,5 +195,63 @@ public final class SStructuredErrorTest
     assertEquals(Map.of(), error.attributes());
     assertEquals(Optional.empty(), error.exception());
     assertEquals(Optional.empty(), error.remediatingAction());
+  }
+
+  record OtherError<C>(
+    C errorCode,
+    String message,
+    Map<String, String> attributes,
+    Optional<String> remediatingAction,
+    Optional<Throwable> exception)
+    implements SStructuredErrorType<C>
+  {
+
+  }
+
+  final class Ex extends Exception
+    implements SStructuredErrorExceptionType<String>
+  {
+    private final String errorCode;
+    private final Map<String, String> attributes;
+    private final Optional<String> remediatingAction;
+    private final Optional<Throwable> exception;
+
+    Ex(
+      final String errorCode,
+      final String message,
+      final Map<String, String> attributes,
+      final Optional<String> remediatingAction,
+      final Optional<Throwable> exception)
+    {
+      super(message);
+      this.errorCode = errorCode;
+      this.attributes = attributes;
+      this.remediatingAction = remediatingAction;
+      this.exception = exception;
+    }
+
+    @Override
+    public String errorCode()
+    {
+      return this.errorCode;
+    }
+
+    @Override
+    public Map<String, String> attributes()
+    {
+      return this.attributes;
+    }
+
+    @Override
+    public Optional<String> remediatingAction()
+    {
+      return this.remediatingAction;
+    }
+
+    @Override
+    public Optional<Throwable> exception()
+    {
+      return this.exception;
+    }
   }
 }

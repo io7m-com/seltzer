@@ -26,6 +26,8 @@ import java.util.Optional;
 
 /**
  * A convenient extension of the standard {@link IOException} class.
+ *
+ * @since 1.1.0
  */
 
 public class SIOException
@@ -204,6 +206,22 @@ public class SIOException
     final Optional<String> inRemediatingAction)
   {
     this(message, inErrorCode, Map.of(), inRemediatingAction);
+  }
+
+  /**
+   * Construct an exception.
+   *
+   * @param message      The message
+   * @param inErrorCode  The error code
+   * @param inAttributes The attributes
+   */
+
+  public SIOException(
+    final String message,
+    final String inErrorCode,
+    final Map<String, String> inAttributes)
+  {
+    this(message, inErrorCode, inAttributes, Optional.empty());
   }
 
   @Override
