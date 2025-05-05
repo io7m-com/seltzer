@@ -13,7 +13,7 @@
   </parent>
   <artifactId>com.io7m.seltzer.bom</artifactId>
 
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
   <name>com.io7m.seltzer.bom</name>
   <description>Structured Error Logging Specification (BOM)</description>
   <url>https://www.io7m.com/software/seltzer</url>
