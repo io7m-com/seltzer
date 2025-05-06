@@ -8,12 +8,12 @@
   <parent>
     <groupId>com.io7m.primogenitor</groupId>
     <artifactId>com.io7m.primogenitor.full</artifactId>
-    <version>8.2.0</version>
+    <version>8.5.0</version>
   </parent>
 
   <groupId>com.io7m.seltzer</groupId>
   <artifactId>com.io7m.seltzer</artifactId>
-  <version>1.1.0</version>
+  <version>1.2.0</version>
 
   <packaging>pom</packaging>
   <name>com.io7m.seltzer</name>
@@ -22,18 +22,20 @@
 
   <modules>
     <module>com.io7m.seltzer.api</module>
+    <module>com.io7m.seltzer.bom</module>
     <module>com.io7m.seltzer.io</module>
+    <module>com.io7m.seltzer.slf4j</module>
     <module>com.io7m.seltzer.tests</module>
   </modules>
 
   <properties>
     <!-- Configuration. -->
-    <io7m.api.previousVersion>1.0.1</io7m.api.previousVersion>
+    <io7m.api.previousVersion>1.1.0</io7m.api.previousVersion>
     <io7m.java.targetJavaVersion>17</io7m.java.targetJavaVersion>
 
     <!-- Third-party dependencies. -->
-    <org.junit.version>5.10.3</org.junit.version>
-    <jqwik.version>1.9.0</jqwik.version>
+    <org.junit.version>5.12.2</org.junit.version>
+    <jqwik.version>1.9.2</jqwik.version>
   </properties>
 
   <licenses>
@@ -104,7 +106,15 @@
       <dependency>
         <groupId>com.io7m.primogenitor</groupId>
         <artifactId>com.io7m.primogenitor.support</artifactId>
-        <version>8.2.0</version>
+        <version>8.5.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-bom</artifactId>
+        <version>2.0.17</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
 
       <!-- Test suite. -->

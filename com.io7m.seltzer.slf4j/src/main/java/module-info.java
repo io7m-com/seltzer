@@ -1,5 +1,5 @@
 /*
- * Copyright © 2024 Mark Raynsford <code@io7m.com> https://www.io7m.com
+ * Copyright © 2025 Mark Raynsford <code@io7m.com> https://www.io7m.com
  *
  * Permission to use, copy, modify, and/or distribute this software for any
  * purpose with or without fee is hereby granted, provided that the above
@@ -15,25 +15,16 @@
  */
 
 /**
- * Structured Error Logging Specification (Tests)
+ * Structured Error Logging Specification (SLF4J Extensions)
  */
 
-open module com.io7m.seltzer.tests
+module com.io7m.seltzer.slf4j
 {
   requires static org.osgi.annotation.bundle;
   requires static org.osgi.annotation.versioning;
 
   requires com.io7m.seltzer.api;
-  requires com.io7m.seltzer.io;
-  requires com.io7m.seltzer.slf4j;
-
-  requires net.jqwik.api;
-  requires org.junit.jupiter.api;
-  requires org.junit.jupiter.engine;
-  requires org.junit.platform.commons;
-  requires org.junit.platform.engine;
-  requires org.junit.platform.launcher;
   requires org.slf4j;
 
-  exports com.io7m.seltzer.tests;
+  exports com.io7m.seltzer.slf4j;
 }
