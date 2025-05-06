@@ -24,10 +24,20 @@
         <c:change date="2024-08-04T00:00:00+00:00" summary="Add com.io7m.seltzer.io module."/>
       </c:changes>
     </c:release>
-    <c:release date="2025-05-05T08:30:44+00:00" is-open="true" ticket-system="com.github.io7m.seltzer" version="1.2.0">
+    <c:release date="2025-05-06T11:59:24+00:00" is-open="false" ticket-system="com.github.io7m.seltzer" version="1.2.0">
       <c:changes>
+        <c:change date="2024-08-14T00:00:00+00:00" summary="Update org.junit:junit-bom:5.10.3 → 5.11.0."/>
+        <c:change date="2024-09-25T00:00:00+00:00" summary="Update org.junit:junit-bom:5.11.0 → 5.11.1."/>
+        <c:change date="2024-09-30T00:00:00+00:00" summary="Update jqwik.version:1.9.0 → 1.9.1."/>
+        <c:change date="2024-10-04T00:00:00+00:00" summary="Update org.junit:junit-bom:5.11.1 → 5.11.2."/>
+        <c:change date="2024-10-21T00:00:00+00:00" summary="Update org.junit:junit-bom:5.11.2 → 5.11.3."/>
+        <c:change date="2024-12-03T00:00:00+00:00" summary="Update jqwik.version:1.9.1 → 1.9.2."/>
+        <c:change date="2024-12-16T00:00:00+00:00" summary="Update org.junit:junit-bom:5.11.3 → 5.11.4."/>
+        <c:change date="2025-01-24T00:00:00+00:00" summary="Update codecov/codecov-action:5.1.2 → 5.3.1."/>
+        <c:change date="2025-04-01T00:00:00+00:00" summary="Update org.junit:junit-bom:5.11.4 → 5.12.1."/>
+        <c:change date="2025-05-01T00:00:00+00:00" summary="Update org.junit:junit-bom:5.12.1 → 5.12.2."/>
         <c:change date="2025-05-05T00:00:00+00:00" summary="Publish a com.io7m.seltzer.bom module."/>
-        <c:change date="2025-05-05T08:30:44+00:00" summary="Add convenient SLF4J logging."/>
+        <c:change date="2025-05-05T00:00:00+00:00" summary="Add convenient SLF4J logging."/>
       </c:changes>
     </c:release>
   </c:releases>
