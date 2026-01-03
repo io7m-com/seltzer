@@ -178,6 +178,43 @@ public final class SSLoggingTest
   }
 
   @TestFactory
+  public Stream<DynamicTest> testLoggingWithExceptionStyle()
+  {
+    final var logger =
+      new CapturingLogger();
+
+    return Stream.of(Level.values())
+      .map(level -> {
+        return DynamicTest.dynamicTest(
+          "testLogging_%s".formatted(level),
+          () -> {
+            SSLogging.logMDCCodeWithStyle(
+              logger,
+              level,
+              "CODE",
+              "REMEDIATING",
+              SSLogging.MessageStyle.STYLE_MESSAGE_ONLY,
+              new SStructuredError<>(
+                "ErrorCodeName",
+                "A message.",
+                Map.ofEntries(
+                  Map.entry("a", "x"),
+                  Map.entry("b", "y"),
+                  Map.entry("c", "z")
+                ),
+                Optional.of("Some action."),
+                Optional.of(new IOException("Printer on fire."))
+              )
+            );
+
+            final var event = logger.events.remove();
+            assertEquals(level, event.level);
+            System.out.println(event);
+          });
+      });
+  }
+
+  @TestFactory
   public Stream<DynamicTest> testLoggingWithoutException()
   {
     final var logger =

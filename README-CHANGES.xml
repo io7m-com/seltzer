@@ -24,7 +24,7 @@
         <c:change date="2024-08-04T00:00:00+00:00" summary="Add com.io7m.seltzer.io module."/>
       </c:changes>
     </c:release>
-    <c:release date="2025-05-06T11:59:24+00:00" is-open="false" ticket-system="com.github.io7m.seltzer" version="1.2.0">
+    <c:release date="2025-05-06T00:00:00+00:00" is-open="false" ticket-system="com.github.io7m.seltzer" version="1.2.0">
       <c:changes>
         <c:change date="2024-08-14T00:00:00+00:00" summary="Update org.junit:junit-bom:5.10.3 → 5.11.0."/>
         <c:change date="2024-09-25T00:00:00+00:00" summary="Update org.junit:junit-bom:5.11.0 → 5.11.1."/>
@@ -38,6 +38,15 @@
         <c:change date="2025-05-01T00:00:00+00:00" summary="Update org.junit:junit-bom:5.12.1 → 5.12.2."/>
         <c:change date="2025-05-05T00:00:00+00:00" summary="Publish a com.io7m.seltzer.bom module."/>
         <c:change date="2025-05-05T00:00:00+00:00" summary="Add convenient SLF4J logging."/>
+      </c:changes>
+    </c:release>
+    <c:release date="2026-01-03T22:06:42+00:00" is-open="true" ticket-system="com.github.io7m.seltzer" version="1.3.0">
+      <c:changes>
+        <c:change date="2026-01-03T22:06:42+00:00" summary="Allow for omitting colons from SSLogging messages.">
+          <c:tickets>
+            <c:ticket id="51"/>
+          </c:tickets>
+        </c:change>
       </c:changes>
     </c:release>
   </c:releases>
