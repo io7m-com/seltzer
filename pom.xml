@@ -11,7 +11,7 @@
 
   <groupId>com.io7m.seltzer</groupId>
   <artifactId>com.io7m.seltzer</artifactId>
-  <version>1.3.0</version>
+  <version>1.4.0-SNAPSHOT</version>
 
   <packaging>pom</packaging>
   <name>com.io7m.seltzer</name>
@@ -30,7 +30,7 @@
     <io7m.workID>6a657ff3-efd7-3d5e-8a75-3fac787da1a2</io7m.workID>
 
     <!-- Configuration. -->
-    <io7m.api.previousVersion>1.2.0</io7m.api.previousVersion>
+    <io7m.api.previousVersion>1.3.0</io7m.api.previousVersion>
     <io7m.java.targetJavaVersion>17</io7m.java.targetJavaVersion>
 
     <!-- Third-party dependencies. -->
