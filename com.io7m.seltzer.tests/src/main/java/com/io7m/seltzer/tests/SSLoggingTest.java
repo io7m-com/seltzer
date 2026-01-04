@@ -32,6 +32,7 @@ import java.util.Optional;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public final class SSLoggingTest
 {
@@ -172,6 +173,117 @@ public final class SSLoggingTest
 
             final var event = logger.events.remove();
             assertEquals(level, event.level);
+            assertTrue(event.messagePattern.endsWith("CODE=ErrorCodeName REMEDIATING=Some action. {}: "));
+            System.out.println(event);
+          });
+      });
+  }
+
+  @TestFactory
+  public Stream<DynamicTest> testLoggingWithExceptionStyle()
+  {
+    final var logger =
+      new CapturingLogger();
+
+    return Stream.of(Level.values())
+      .map(level -> {
+        return DynamicTest.dynamicTest(
+          "testLogging_%s".formatted(level),
+          () -> {
+            SSLogging.logMDCCodeWithStyle(
+              logger,
+              level,
+              "CODE",
+              "REMEDIATING",
+              SSLogging.MessageStyle.STYLE_MESSAGE_ONLY,
+              new SStructuredError<>(
+                "ErrorCodeName",
+                "A message.",
+                Map.ofEntries(
+                  Map.entry("a", "x"),
+                  Map.entry("b", "y"),
+                  Map.entry("c", "z")
+                ),
+                Optional.of("Some action."),
+                Optional.of(new IOException("Printer on fire."))
+              )
+            );
+
+            final var event = logger.events.remove();
+            assertEquals(level, event.level);
+            assertTrue(event.messagePattern.endsWith("CODE=ErrorCodeName REMEDIATING=Some action. {}"));
+            System.out.println(event);
+          });
+      });
+  }
+
+  @TestFactory
+  public Stream<DynamicTest> testLoggingWithStyle()
+  {
+    final var logger =
+      new CapturingLogger();
+
+    return Stream.of(Level.values())
+      .map(level -> {
+        return DynamicTest.dynamicTest(
+          "testLogging_%s".formatted(level),
+          () -> {
+            SSLogging.logMDCWithStyle(
+              logger,
+              level,
+              SSLogging.MessageStyle.STYLE_MESSAGE_ONLY,
+              new SStructuredError<>(
+                "ErrorCodeName",
+                "A message.",
+                Map.ofEntries(
+                  Map.entry("a", "x"),
+                  Map.entry("b", "y"),
+                  Map.entry("c", "z")
+                ),
+                Optional.of("Some action."),
+                Optional.of(new IOException("Printer on fire."))
+              )
+            );
+
+            final var event = logger.events.remove();
+            assertEquals(level, event.level);
+            assertTrue(event.messagePattern.endsWith("ErrorCode=ErrorCodeName RemediatingAction=Some action. {}"));
+            System.out.println(event);
+          });
+      });
+  }
+
+  @TestFactory
+  public Stream<DynamicTest> testLoggingWithStyleWithoutException()
+  {
+    final var logger =
+      new CapturingLogger();
+
+    return Stream.of(Level.values())
+      .map(level -> {
+        return DynamicTest.dynamicTest(
+          "testLogging_%s".formatted(level),
+          () -> {
+            SSLogging.logMDCWithStyle(
+              logger,
+              level,
+              SSLogging.MessageStyle.STYLE_MESSAGE_ONLY,
+              new SStructuredError<>(
+                "ErrorCodeName",
+                "A message.",
+                Map.ofEntries(
+                  Map.entry("a", "x"),
+                  Map.entry("b", "y"),
+                  Map.entry("c", "z")
+                ),
+                Optional.of("Some action."),
+                Optional.empty()
+              )
+            );
+
+            final var event = logger.events.remove();
+            assertEquals(level, event.level);
+            assertTrue(event.messagePattern.endsWith("ErrorCode=ErrorCodeName RemediatingAction=Some action. {}"));
             System.out.println(event);
           });
       });
@@ -206,6 +318,7 @@ public final class SSLoggingTest
 
             final var event = logger.events.remove();
             assertEquals(level, event.level);
+            assertTrue(event.messagePattern.endsWith("ErrorCode=ErrorCodeName RemediatingAction=Some action. {}"));
             System.out.println(event);
           });
       });
